@@ -87,7 +87,7 @@ if uploaded_file is not None:
             st.warning('pH的现状评价数据会出现bug，请自行核对修改')
 
             # 显示表头并提供复制功能，列名用制表符分隔
-            st.text_area("表头可以在下方复制", value="\t".join(results_df.columns), height=50)
+            st.text_area("表头可以在下方复制", value="\t".join(results_df.columns))
                 # 生成报告内容
             if evaluation_details:
                 report_content.append(f"样品编号 {sample_id} 中的各项指标：{'，'.join(evaluation_details)}。")
@@ -138,7 +138,7 @@ if uploaded_file is not None:
             # 显示结果表格
             st.subheader("检测结果")
             st.dataframe(results_df, use_container_width=True)
-            st.text_area("表头可以在下方复制", value="\t".join(results_df.columns), height=50)
+            st.text_area("表头可以在下方复制", value="\t".join(results_df.columns))
 
             # 生成报告内容
             report_content = []
